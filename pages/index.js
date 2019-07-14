@@ -10,7 +10,7 @@ class Index extends React.Component {
       <Page >
         <Layout>
           <Layout.Section>
-          
+          <CreateProduct></CreateProduct>
           <ReadProduct></ReadProduct>
           </Layout.Section>
         </Layout>

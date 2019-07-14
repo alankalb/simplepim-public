@@ -34,57 +34,8 @@ class CreateProduct extends React.Component {
     return value => this.setState({ [field]: value });
   };
 
-
   render() {
-    let successCard = <Card.Section></Card.Section>
-    if (this.state.loading){
-      successCard = <Card.Section>
-        <TextContainer>
-          <p>Finding Product...</p>
-        </TextContainer>
-      </Card.Section>
-    }
-    if (this.state.data && !this.state.loading){
-      successCard = <Card.Section>
-        <TextContainer>
-        <p>API Response</p>
-        <p>{"{"}</p>
-              <p className="indent1" >
-                {'"'}id{'"'}: {this.state.response_id},
-              </p>
-              <p className="indent1" >
-                {'"'}title{'"'}: {'"'}{this.state.response_title}{'"'},
-              </p>
-              <p className="indent1" >
-                {'"'}body_html{'"'}: {'"'}{this.state.response_description}{'"'},
-              </p>
-              <p className="indent1" >
-                {'"'}variants{'"'}: [
-              </p>
-              <p className="indent2" >
-                {'{'}
-              </p>
-              <p className="indent3" >
-                {'"'}price{'"'}: {'"'}{this.state.response_price}{'"'}
-              </p>
-              <p className="indent2" >
-                {'}'}
-              </p>
-              <p className="indent1" >
-                ]
-              </p>
-              <p className="indent0" >
-                {"}"}
-              </p>
-              <p>{' '}</p>
-              <p>Was this the product you were looking for?</p>
-        </TextContainer>
-      </Card.Section>
-    }
-    
-
     return (
-    
         <Card
           title="Read a Product"
           sectioned
@@ -125,18 +76,13 @@ class CreateProduct extends React.Component {
           <Card.Section>
             <TextContainer>
               <p>GET /admin/products/{this.state.id}.json</p>
+
             </TextContainer>
           </Card.Section>
-          {successCard}
-
         </Card>
-
-
-     
-
       
     )
   }
 }
 
-export default ReadProduct;
+export default CreateProduct;
