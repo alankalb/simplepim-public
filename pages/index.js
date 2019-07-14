@@ -4,11 +4,11 @@ import CreateProduct from '../components/CreateProduct';
 
 
 class Index extends React.Component {
-  state = { open: false };
   render() {
     
     return (
       <Page
+        fullWidth
         title="Simple PIM Example"
         separator
       >
