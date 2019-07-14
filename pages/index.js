@@ -7,13 +7,11 @@ class Index extends React.Component {
   render() {
     
     return (
-      <Page
-        fullWidth
-        title="Simple PIM Example"
-        separator
-      >
+      <Page fullWidth>
         <CreateProduct></CreateProduct>
       </Page>
+        
+
     );
   }
 
