@@ -27,7 +27,7 @@ class CreateProduct extends React.Component {
     response_description: '',
     response_price: '',
     loading: false,
-    displaySuccess: false
+    data: false
   };
 
   handleChange = field => {
@@ -35,6 +35,25 @@ class CreateProduct extends React.Component {
   };
 
   render() {
+    let successCard = <Card.Section></Card.Section>
+    if (this.state.loading) {
+      successCard = <Card.Section>
+         <Query 
+          query={GET_PRODUCT_BY_ID} 
+          variables={{ id: 'gid://shopify/Product/'+this.state.id }}
+          onCompleted={(data) => {
+            console.log(data)
+          }}
+        >
+                {({ data, loading, error }) => {
+                    if (loading) return <div>Finding Products…</div>;
+                    if (error) return <div>{error.message}</div>;
+                }}
+        </Query>
+      </Card.Section>
+    }
+
+
     return (
         <Card
           title="Read a Product"
@@ -44,12 +63,6 @@ class CreateProduct extends React.Component {
               content: 'Read Product',
               onAction: () => {
                 this.setState({loading:true})
-                const productInput = {
-                  id: 'gid://shopify/Product/' + this.state.id,
-                };
-                handleSubmit({
-                  variables: {input: productInput}
-                });
               }
             }
           }
@@ -79,6 +92,7 @@ class CreateProduct extends React.Component {
 
             </TextContainer>
           </Card.Section>
+          {successCard}
         </Card>
       
     )
