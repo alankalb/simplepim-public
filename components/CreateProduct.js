@@ -81,6 +81,8 @@ class CreateProduct extends React.Component {
               <p className="indent0" >
                 {"}"}
               </p>
+              <p>{' '}</p>
+              <p>Checkout the products in the admin to see if your product was created!</p>
         </TextContainer>
       </Card.Section>
     }
@@ -103,7 +105,7 @@ class CreateProduct extends React.Component {
         return (
 
         <Card
-          title="Create"
+          title="Create a Product"
           sectioned
           primaryFooterAction={
             {
@@ -129,10 +131,15 @@ class CreateProduct extends React.Component {
               The first action we will do with the API is Create. Using the Shopify API, we will Create a product using the POST endpoint. 
               Fill in the fields with some product information. As you fill out the form, our app will translate your production information 
               into the JSON format that is required by the Shopify API. Once you click 'Create Product', our app will send the JSON object to the 
-              POST endpoint to create a product in our store. After we send our API request, Shopify will send back a response notifying us 
+              POST endpoint to create a product in our store. 
+            </p>
+            <p>
+              After we send our API request, Shopify will send back a response notifying us 
               that the API call was received and acted upon. In this case, Shopify will send a JSON object with our product information and a newly 
               created Product ID. Copy this ID as we will be using it in the next section.
             </p>
+          </Card.Section>
+          <Card.Section>
             <FormLayout>
               <TextField label="Title" onChange={this.handleChange('title')} value={this.state.title}/>
               <TextField label="Description" multiline onChange={this.handleChange('description')} value={this.state.description} />
@@ -168,6 +175,7 @@ class CreateProduct extends React.Component {
               <p className="indent0" >
                 {"}"}
               </p>
+              
 
             </TextContainer>
           </Card.Section>
