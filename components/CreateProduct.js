@@ -101,11 +101,7 @@ class CreateProduct extends React.Component {
       >
         {(handleSubmit, {error, loading, data}) => {
         return (
-      <Layout>
-      <Layout.AnnotatedSection 
-        title="Create a Product" 
-        description="Use the Product API POST endpoint to create a new product."
-      >
+
         <Card
           sectioned
           primaryFooterAction={
@@ -170,8 +166,7 @@ class CreateProduct extends React.Component {
           {successCard}
 
         </Card>
-      </Layout.AnnotatedSection>
-    </Layout>
+
         )}}
 
       </Mutation>
