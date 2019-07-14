@@ -22,6 +22,8 @@
   "homepage": "https://github.com/alankalb/simplepim-public#readme",
   "dependencies": {
     "@shopify/koa-shopify-auth": "^3.1.30",
+    "@shopify/polaris": "^3.19.0",
+    "@zeit/next-css": "^1.0.1",
     "dotenv": "^8.0.0",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.7.0",
