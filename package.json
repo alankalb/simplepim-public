@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,13 @@
   },
   "homepage": "https://github.com/alankalb/simplepim-public#readme",
   "dependencies": {
+    "@shopify/koa-shopify-auth": "^3.1.30",
+    "dotenv": "^8.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "koa": "^2.7.0",
+    "koa-session": "^5.12.2",
     "next": "^9.0.1",
+    "ngrok": "^3.2.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
