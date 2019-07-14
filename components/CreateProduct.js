@@ -101,12 +101,13 @@ class CreateProduct extends React.Component {
       >
         {(handleSubmit, {error, loading, data}) => {
         return (
-      <Layout sectioned={true}>
+      <Layout>
       <Layout.AnnotatedSection 
         title="Create a Product" 
         description="Use the Product API POST endpoint to create a new product."
       >
         <Card
+          sectioned
           primaryFooterAction={
             {
               content: 'Create Product',
