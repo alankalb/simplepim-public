@@ -7,7 +7,7 @@ class Index extends React.Component {
   render() {
     
     return (
-      <Page fullWidth>
+      <Page fullWidth title="API Learning" separator>
         <CreateProduct></CreateProduct>
       </Page>
         
