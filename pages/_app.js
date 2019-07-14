@@ -30,9 +30,9 @@ class MyApp extends App {
           apiKey={API_KEY}
           forceRedirect
         >
-          
+          <ApolloProvider client={client}>
             <Component {...pageProps} />
-          
+          </ApolloProvider>
         </AppProvider>
       </React.Fragment>
     );

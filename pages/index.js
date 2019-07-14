@@ -1,4 +1,5 @@
 import { Page } from '@shopify/polaris';
+import CreateProduct from '../components/CreateProduct';
 
 const Index = () => (
   <div>
@@ -6,6 +7,7 @@ const Index = () => (
     title="Simple PIM Example"
     separator
   >
+    <CreateProduct></CreateProduct>
   </Page>
 </div>
 );
