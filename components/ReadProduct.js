@@ -38,17 +38,17 @@ class CreateProduct extends React.Component {
     let successCard = <Card.Section></Card.Section>
     if (this.state.loading) {
       successCard = <Card.Section>
-         <Query 
+        <Query 
           query={GET_PRODUCT_BY_ID} 
-          variables={{ id: 'gid://shopify/Product/'+this.state.id }}
+          variables={{ id: 'gid://shopify/Product/1976570445846' }}
           onCompleted={(data) => {
             console.log(data)
           }}
         >
-                {({ data, loading, error }) => {
-                    if (loading) return <div>Finding Products…</div>;
-                    if (error) return <div>{error.message}</div>;
-                }}
+          {({ data, loading, error }) => {
+            if (loading) return <div>Finding Products…</div>;
+            if (error) return <div>{error.message}</div>;
+          }}
         </Query>
       </Card.Section>
     }
