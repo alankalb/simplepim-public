@@ -2,6 +2,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { AppProvider } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
+import '../stylesheets/extra.css';
 import Cookies from 'js-cookie';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';

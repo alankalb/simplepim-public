@@ -1,5 +1,4 @@
 import { EmptyState, Layout, Page, ResourcePicker } from '@shopify/polaris';
-import store from 'store-js';
 import CreateProduct from '../components/CreateProduct';
 
 
