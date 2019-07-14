@@ -1,32 +1,27 @@
 import { TextField, Layout, Card, FormLayout, TextContainer, Form, TextStyle, PageActions } from '@shopify/polaris';
-import { Mutation } from 'react-apollo';
+import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const PROD_CREATE = gql`
-  mutation productCreate($input: ProductInput!) {
-  productCreate(input: $input) {
-    product {
+const GET_PRODUCT_BY_ID = gql`
+  query getProduct($id: ID!) {
+    product(id:$id){
       id
       title
       description
-      variants (first:1) {
+      variants(first: 1) {
         edges {
           node {
-            id
             price
           }
         }
-      } 
+      }
     }
   }
-}
-`
+`;
 
 class CreateProduct extends React.Component {
   state = {
-    title: '',
-    description: '',
-    price: '0.00',
+    id: '',
     response_id : '',
     response_title: '',
     response_description: '',
@@ -45,7 +40,7 @@ class CreateProduct extends React.Component {
     if (this.state.loading){
       successCard = <Card.Section>
         <TextContainer>
-          <p>Creating Product...</p>
+          <p>Finding Product...</p>
         </TextContainer>
       </Card.Section>
     }
@@ -82,15 +77,15 @@ class CreateProduct extends React.Component {
                 {"}"}
               </p>
               <p>{' '}</p>
-              <p>Checkout the products in the admin to see if your product was created!</p>
+              <p>Was this the product you were looking for?</p>
         </TextContainer>
       </Card.Section>
     }
     
 
     return (
-      <Mutation 
-        mutation={PROD_CREATE}
+      <Query
+        query={GET_PRODUCT_BY_ID}
         onCompleted={(data) => {
           this.setState({data:true})
           this.setState({loading:false})
@@ -105,19 +100,15 @@ class CreateProduct extends React.Component {
         return (
 
         <Card
-          title="Create a Product"
+          title="Read a Product"
           sectioned
           primaryFooterAction={
             {
-              content: 'Create Product',
+              content: 'Read Product',
               onAction: () => {
                 this.setState({loading:true})
                 const productInput = {
-                  title: this.state.title,
-                  bodyHtml: this.state.description,
-                  variants: {
-                    price: this.state.price
-                  }
+                  id: 'gid://shopify/Product/' + this.state.id,
                 };
                 handleSubmit({
                   variables: {input: productInput}
@@ -133,7 +124,6 @@ class CreateProduct extends React.Component {
               into the JSON format that is required by the Shopify API. Once you click 'Create Product', our app will send the JSON object to the 
               POST endpoint to create a product in our store. 
             </p>
-            <p>{' '}</p>
             <p>
               After we send our API request, Shopify will send back a response notifying us 
               that the API call was received and acted upon. In this case, Shopify will send a JSON object with our product information and a newly 
@@ -142,42 +132,13 @@ class CreateProduct extends React.Component {
           </Card.Section>
           <Card.Section>
             <FormLayout>
-              <TextField label="Title" onChange={this.handleChange('title')} value={this.state.title}/>
-              <TextField label="Description" multiline onChange={this.handleChange('description')} value={this.state.description} />
-              <TextField label="Price" type="number" onChange={this.handleChange('price')} value={this.state.price} />
+              <TextField label="ID" onChange={this.handleChange('id')} value={this.state.id}/>
             </FormLayout>
             
           </Card.Section>
           <Card.Section>
             <TextContainer>
-              <p>POST /admin/products.json</p>
-              <p>{"{"}</p>
-              <p className="indent1" >
-                {'"'}title{'"'}: {'"'}{this.state.title}{'"'},
-              </p>
-              <p className="indent1" >
-                {'"'}body_html{'"'}: {'"'}{this.state.description}{'"'},
-              </p>
-              <p className="indent1" >
-                {'"'}variants{'"'}: [
-              </p>
-              <p className="indent2" >
-                {'{'}
-              </p>
-              <p className="indent3" >
-                {'"'}price{'"'}: {'"'}{this.state.price}{'"'}
-              </p>
-              <p className="indent2" >
-                {'}'}
-              </p>
-              <p className="indent1" >
-                ]
-              </p>
-              <p className="indent0" >
-                {"}"}
-              </p>
-              
-
+              <p>GET /admin/products/{this.state.id}.json</p>
             </TextContainer>
           </Card.Section>
           {successCard}
@@ -186,11 +147,11 @@ class CreateProduct extends React.Component {
 
         )}}
 
-      </Mutation>
+      </Query>
 
       
     )
   }
 }
 
-export default CreateProduct;
+export default ReadProduct;
