@@ -84,21 +84,7 @@ class CreateProduct extends React.Component {
     
 
     return (
-      <Query
-        query={GET_PRODUCT_BY_ID}
-        onCompleted={(data) => {
-          this.setState({data:true})
-          this.setState({loading:false})
-          this.setState({response_title: data.productCreate.product.title})
-          this.setState({response_description: data.productCreate.product.description})
-          var id = data.productCreate.product.id.replace('gid://shopify/Product/', '')
-          this.setState({response_id: id})
-          this.setState({response_price: data.productCreate.product.variants.edges[0].node.price})
-        }}
-      >
-        {(handleSubmit, {error, loading, data}) => {
-        return (
-
+    
         <Card
           title="Read a Product"
           sectioned
@@ -145,9 +131,8 @@ class CreateProduct extends React.Component {
 
         </Card>
 
-        )}}
 
-      </Query>
+     
 
       
     )
