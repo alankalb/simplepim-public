@@ -1,11 +1,13 @@
-import { TextStyle } from '@shopify/polaris';
+import { Page } from '@shopify/polaris';
 
 const Index = () => (
   <div>
-    <TextStyle variation="positive">
-      Sample app using React and Next.js
-    </TextStyle>
-  </div>
+  <Page
+    title="Simple PIM Example"
+    separator
+  >
+  </Page>
+</div>
 );
 
 export default Index;
