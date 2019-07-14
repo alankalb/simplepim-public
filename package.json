@@ -1,5 +1,5 @@
 {
-  "name": "simplepim-public",
+  "name": "shopify-demo-app-node-react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,33 +11,37 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alankalb/simplepim-public.git"
+    "url": "git+https://github.com/Shopify/shopify-demo-app-node-react.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alankalb/simplepim-public/issues"
+    "url": "https://github.com/Shopify/shopify-demo-app-node-react/issues"
   },
-  "homepage": "https://github.com/alankalb/simplepim-public#readme",
+  "homepage": "https://github.com/Shopify/shopify-demo-app-node-react#readme",
   "dependencies": {
-    "@shopify/koa-shopify-auth": "^3.1.30",
-    "@shopify/koa-shopify-graphql-proxy": "^3.1.1",
-    "@shopify/polaris": "^3.19.0",
+    "@shopify/app-bridge": "^1.3.0",
+    "@shopify/koa-shopify-auth": "^3.1.25",
+    "@shopify/koa-shopify-graphql-proxy": "^3.0.1",
+    "@shopify/polaris": "^3.10.0",
     "@zeit/next-css": "^1.0.1",
-    "apollo-boost": "^0.4.3",
-    "dotenv": "^8.0.0",
-    "graphql": "^14.4.2",
+    "apollo-boost": "^0.3.1",
+    "dotenv": "^6.2.0",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     "js-cookie": "^2.2.0",
     "koa": "^2.7.0",
-    "koa-session": "^5.12.2",
-    "next": "^9.0.1",
-    "ngrok": "^3.2.2",
-    "node-fetch": "^2.6.0",
-    "react": "^16.8.6",
-    "react-apollo": "^2.5.8",
-    "react-dom": "^16.8.6",
+    "koa-session": "^5.10.1",
+    "next": "^8.0.3",
+    "react": "^16.8.4",
+    "react-apollo": "^2.5.2",
+    "react-dom": "^16.8.4",
     "store-js": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-shopify": "^27.0.1"
   }
 }
