@@ -7,11 +7,14 @@ class Index extends React.Component {
   render() {
     
     return (
-      <Page fullWidth >
+      <Page >
         <Layout>
+          <Layout.Section>
           <CreateProduct></CreateProduct>
+          </Layout.Section>
         </Layout>
       </Page>
+ 
     );
   }
 
