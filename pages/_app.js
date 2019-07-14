@@ -8,7 +8,7 @@ import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
   fetchOptions: {
-    credentials: 'include'
+    credentials: 'include',
   },
 });
 
@@ -37,6 +37,6 @@ class MyApp extends App {
       </React.Fragment>
     );
   }
-};
+}
 
 export default MyApp;
