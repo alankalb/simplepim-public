@@ -113,8 +113,7 @@ class ReadProduct extends React.Component {
               onAction: () => {
                 this.setState({loading:true})
                 const productInput = {
-                  id: 'gid://shopify/Product/'+this.state.id,
-                  bodyHtml: this.state.description
+                  id: 'gid://shopify/Product/'+this.state.id
                 };
                 handleSubmit({
                   variables: {input: productInput}

@@ -38,7 +38,7 @@ class DeleteProduct extends React.Component {
         <p>API Response</p>
         <p>{"{"}</p>
               <p className="indent1" >
-                {'"'}deleted_id{'"'}: {this.state.response_id},
+                {'"'}deleted_id{'"'}: {this.state.response_id}
               </p>
               <p className="indent0" >
                 {"}"}
@@ -84,11 +84,13 @@ class DeleteProduct extends React.Component {
         >
           <Card.Section>
             <p>
-            The second action we will do with the API is Read. Using the Shopify API, we will Read a product using the GET endpoint. Copy the ID from the product you created above and input it into the ID field. Notice the ID is inserted into the URL below. For a GET request, we don't need to send Shopify a JSON body; all we need to do is provide a URL with the proper product ID. Once you click 'Read Product', our app will request the product information from the GET Endpoint.
+            The final action we will do with the API is Delete. Using the Shopify API, we will delete an existing product. 
+            Use the product ID you created above and input into the ID field. Like the GET endpoint, the DELETE endpoint does 
+            not require a JSON object to be sent with the request. All that is needed is a product ID in the url.
             </p>
             <p>{' '}</p>
             <p>
-            After we send our API request, Shopify will send back a response with our requested product information.
+            Once the DELETE request is sent, Shopify will send a response confirming the ID of the product that was deleted.
             </p>
           </Card.Section>
           <Card.Section>
