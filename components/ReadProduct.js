@@ -115,15 +115,13 @@ class CreateProduct extends React.Component {
         >
           <Card.Section>
             <p>
-              The first action we will do with the API is Create. Using the Shopify API, we will Create a product using the POST endpoint. 
-              Fill in the fields with some product information. As you fill out the form, our app will translate your production information 
-              into the JSON format that is required by the Shopify API. Once you click 'Create Product', our app will send the JSON object to the 
-              POST endpoint to create a product in our store. 
+              The second action we will do with the API is Read. Using the Shopify API, we will Read a product using the GET endpoint. 
+              Copy the ID from the product you created above and input it into the ID field. Notice the ID is inserted into the URL below. 
+              For a GET request, we don't need to send Shopify a JSON body; all we need to do is provide a URL with the proper product ID. Once 
+              you click 'Read Product', our app will request the product information from the GET Endpoint.
             </p>
             <p>
-              After we send our API request, Shopify will send back a response notifying us 
-              that the API call was received and acted upon. In this case, Shopify will send a JSON object with our product information and a newly 
-              created Product ID. Copy this ID as we will be using it in the next section.
+              After we send our API request, Shopify will send back a response with our requested product information.
             </p>
           </Card.Section>
           <Card.Section>
