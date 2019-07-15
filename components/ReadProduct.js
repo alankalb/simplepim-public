@@ -42,7 +42,7 @@ class CreateProduct extends React.Component {
           query={GET_PRODUCT_BY_ID} 
           variables={{ id: 'gid://shopify/Product/' + this.state.id }}
           onCompleted={(data) => {
-            console.log(data)
+            console.log(data.product)
             this.setState({data:true})
             this.setState({loading:false})
             
