@@ -42,10 +42,13 @@ class CreateProduct extends React.Component {
           query={GET_PRODUCT_BY_ID} 
           variables={{ id: 'gid://shopify/Product/' + this.state.id }}
           onCompleted={(data) => {
-            console.log(data.product)
             this.setState({data:true})
             this.setState({loading:false})
-            
+            this.setState({response_title: data.product.product.title})
+            this.setState({response_description: data.product.product.description})
+            var id = data.product.product.id.replace('gid://shopify/Product/', '')
+            this.setState({response_id: id})
+            this.setState({response_price: data.product.product.variants.edges[0].node.price})
           }}
         >
           {({ data, loading, error }) => {
@@ -60,6 +63,35 @@ class CreateProduct extends React.Component {
       successCard = <Card.Section>
         <TextContainer>
           <p>API Response</p>
+          <p>{"{"}</p>
+              <p className="indent1" >
+                {'"'}id{'"'}: {this.state.response_id},
+              </p>
+              <p className="indent1" >
+                {'"'}title{'"'}: {'"'}{this.state.response_title}{'"'},
+              </p>
+              <p className="indent1" >
+                {'"'}body_html{'"'}: {'"'}{this.state.response_description}{'"'},
+              </p>
+              <p className="indent1" >
+                {'"'}variants{'"'}: [
+              </p>
+              <p className="indent2" >
+                {'{'}
+              </p>
+              <p className="indent3" >
+                {'"'}price{'"'}: {'"'}{this.state.response_price}{'"'}
+              </p>
+              <p className="indent2" >
+                {'}'}
+              </p>
+              <p className="indent1" >
+                ]
+              </p>
+              <p className="indent0" >
+                {"}"}
+              </p>
+              <p>{' '}</p>
           <p>Is this the product you were looking for?</p>
         </TextContainer>
       </Card.Section>
