@@ -55,7 +55,7 @@ class CreateProduct extends React.Component {
           {({ data, loading, error }) => {
             if (loading) return <div>Finding Products…</div>;
             if (error) return <div>{error.message}</div>;
-            if(data) return null
+            if(data) return <div>Finding Products…</div>
           }}
         </Query>
       </Card.Section>
