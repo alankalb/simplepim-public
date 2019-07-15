@@ -2,9 +2,9 @@ import { TextField, Layout, Card, FormLayout, TextContainer, Form, TextStyle, Pa
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 
-const PROD_CREATE = gql`
+const PROD_UPDATE = gql`
   mutation productUpdate($input: ProductInput!) {
-  productCreate(input: $input) {
+  productUpdate(input: $input) {
     product {
       id
       title
@@ -89,7 +89,7 @@ class UpdateProduct extends React.Component {
 
     return (
       <Mutation 
-        mutation={PROD_CREATE}
+        mutation={PROD_UPDATE}
         onCompleted={(data) => {
           console.log(data)
           this.setState({data:true})
