@@ -43,6 +43,8 @@ class CreateProduct extends React.Component {
           variables={{ id: 'gid://shopify/Product/' + this.state.id }}
           onCompleted={(data) => {
             console.log(data)
+            this.setState({data:true})
+            this.setState({loading:false})
             
           }}
         >
@@ -57,37 +59,8 @@ class CreateProduct extends React.Component {
     if (this.state.data && !this.state.loading){
       successCard = <Card.Section>
         <TextContainer>
-        <p>API Response</p>
-        <p>{"{"}</p>
-              <p className="indent1" >
-                {'"'}id{'"'}: {this.state.response_id},
-              </p>
-              <p className="indent1" >
-                {'"'}title{'"'}: {'"'}{this.state.response_title}{'"'},
-              </p>
-              <p className="indent1" >
-                {'"'}body_html{'"'}: {'"'}{this.state.response_description}{'"'},
-              </p>
-              <p className="indent1" >
-                {'"'}variants{'"'}: [
-              </p>
-              <p className="indent2" >
-                {'{'}
-              </p>
-              <p className="indent3" >
-                {'"'}price{'"'}: {'"'}{this.state.response_price}{'"'}
-              </p>
-              <p className="indent2" >
-                {'}'}
-              </p>
-              <p className="indent1" >
-                ]
-              </p>
-              <p className="indent0" >
-                {"}"}
-              </p>
-              <p>{' '}</p>
-              <p>Is this the product you were looking for?</p>
+          <p>API Response</p>
+          <p>Is this the product you were looking for?</p>
         </TextContainer>
       </Card.Section>
     }
