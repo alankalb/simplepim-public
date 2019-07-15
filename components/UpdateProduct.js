@@ -144,7 +144,7 @@ class UpdateProduct extends React.Component {
           </Card.Section>
           <Card.Section>
             <TextContainer>
-              <p>POST /admin/products/{this.state.id}.json</p>
+              <p>PUT /admin/products/{this.state.id}.json</p>
               <p>{"{"}</p>
               <p className="indent1" >
                 {'"'}id{'"'}: {'"'}{this.state.id}{'"'},
