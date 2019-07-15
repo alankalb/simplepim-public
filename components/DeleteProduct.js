@@ -57,7 +57,7 @@ class DeleteProduct extends React.Component {
           console.log(data)
           this.setState({data:true})
           this.setState({loading:false})
-          var id = data.productDelete.deleteProductId.replace('gid://shopify/Product/', '')
+          var id = data.productDelete.deletedProductId.replace('gid://shopify/Product/', '')
           this.setState({response_id: id})
         }}
       >
