@@ -22,7 +22,7 @@ const PROD_DELETE = gql`
 }
 `
 
-class ReadProduct extends React.Component {
+class DeleteProduct extends React.Component {
   state = {
     id: '',
     response_id : '',
