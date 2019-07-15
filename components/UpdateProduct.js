@@ -125,16 +125,14 @@ class UpdateProduct extends React.Component {
         >
           <Card.Section>
             <p>
-              The first action we will do with the API is Create. Using the Shopify API, we will Create a product using the POST endpoint. 
-              Fill in the fields with some product information. As you fill out the form, our app will translate your production information 
-              into the JSON format that is required by the Shopify API. Once you click 'Create Product', our app will send the JSON object to the 
-              POST endpoint to create a product in our store. 
+              The third action we will do with the API is Update. Using the Shopify API, we will Update the description of an existing product using the PUT endpoint. 
+              Use the product ID from above and add in a new description. To update a product, we have to send a JSON object to Shopify in the correct format 
+              and specify the product ID in the PUT endpoint. Once you click 'Update Product', our app will send the JSON object to the PUT enpoint and Shopify will 
+              use the ID specified in the endpoint to update the correct product.
             </p>
             <p>{' '}</p>
             <p>
-              After we send our API request, Shopify will send back a response notifying us 
-              that the API call was received and acted upon. In this case, Shopify will send a JSON object with our product information and a newly 
-              created Product ID. Copy this ID as we will be using it in the next section.
+              Like the requests we made above, Shopify will send back a request notifying us that API call was receveived and acted upon.
             </p>
           </Card.Section>
           <Card.Section>

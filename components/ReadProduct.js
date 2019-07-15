@@ -81,7 +81,7 @@ class ReadProduct extends React.Component {
                 {"}"}
               </p>
               <p>{' '}</p>
-              <p>Checkout the products in the admin to see if your product was updated!</p>
+              <p>Is this the product you were looking for?</p>
         </TextContainer>
       </Card.Section>
     }
