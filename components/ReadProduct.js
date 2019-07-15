@@ -42,20 +42,14 @@ class CreateProduct extends React.Component {
           query={GET_PRODUCT_BY_ID} 
           variables={{ id: 'gid://shopify/Product/' + this.state.id }}
           onCompleted={(data) => {
-            this.setState({data:true})
-            this.setState({loading:false})
-            this.setState({response_title: data.product.title})
-            this.setState({response_description: data.product.description})
-            var id = data.product.id.replace('gid://shopify/Product/', '')
-            this.setState({response_id: id})
-            this.setState({response_price: data.product.variants.edges[0].node.price})
-            //console.log(data)
+            console.log(data)
+            
           }}
         >
           {({ data, loading, error }) => {
             if (loading) return <div>Finding Products…</div>;
             if (error) return <div>{error.message}</div>;
-            if(data) return <div>Finding Products…</div>
+            if(data) return null
           }}
         </Query>
       </Card.Section>
