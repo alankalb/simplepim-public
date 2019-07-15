@@ -5,19 +5,7 @@ import gql from 'graphql-tag';
 const PROD_DELETE = gql`
   mutation productDelete($input: ProductDeleteInput!) {
   productDelete(input: $input) {
-    product {
-      id
-      title
-      description
-      variants (first:1) {
-        edges {
-          node {
-            id
-            price
-          }
-        }
-      } 
-    }
+    deletedProductId
   }
 }
 `
@@ -69,8 +57,8 @@ class DeleteProduct extends React.Component {
           console.log(data)
           this.setState({data:true})
           this.setState({loading:false})
-          var id = data.productUpdate.product.id.replace('gid://shopify/Product/', '')
-          this.setState({response_id: id})
+          //var id = data.productUpdate.product.id.replace('gid://shopify/Product/', '')
+          //this.setState({response_id: id})
         }}
       >
         {(handleSubmit, {error, loading, data}) => {
