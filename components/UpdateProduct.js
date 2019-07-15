@@ -113,7 +113,8 @@ class UpdateProduct extends React.Component {
               onAction: () => {
                 this.setState({loading:true})
                 const productInput = {
-                  id: 'gid://shopify/Product/'+this.state.id
+                  id: 'gid://shopify/Product/'+this.state.id,
+                  bodyHtml: this.state.description
                 };
                 handleSubmit({
                   variables: {input: productInput}
