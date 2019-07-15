@@ -44,12 +44,12 @@ class CreateProduct extends React.Component {
           onCompleted={(data) => {
             this.setState({data:true})
             this.setState({loading:false})
-            /*
-            this.setState({response_title: data.product.product.title})
-            this.setState({response_description: data.product.product.description})
-            var id = data.product.product.id.replace('gid://shopify/Product/', '')
+            
+            this.setState({response_title: data.product.title})
+            this.setState({response_description: data.product.description})
+            var id = data.product.id.replace('gid://shopify/Product/', '')
             this.setState({response_id: id})
-            this.setState({response_price: data.product.product.variants.edges[0].node.price})*/
+            this.setState({response_price: data.product.variants.edges[0].node.price})
             console.log(data.product.title)
           }}
         >
