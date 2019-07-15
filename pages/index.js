@@ -12,10 +12,7 @@ class Index extends React.Component {
       <Page >
         <Layout>
           <Layout.Section>
-            <CreateProduct></CreateProduct>
-            <ReadProduct></ReadProduct>
-            <UpdateProduct></UpdateProduct>
-            <DeleteProduct></DeleteProduct>
+            This is an unlisted public app!
           </Layout.Section>
         </Layout>
       </Page>
