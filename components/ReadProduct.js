@@ -50,7 +50,7 @@ class CreateProduct extends React.Component {
             var id = data.product.product.id.replace('gid://shopify/Product/', '')
             this.setState({response_id: id})
             this.setState({response_price: data.product.product.variants.edges[0].node.price})*/
-            console.log(data.product)
+            console.log(data.product.title)
           }}
         >
           {({ data, loading, error }) => {
